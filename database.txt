@@ -35,3 +35,37 @@ CREATE TABLE pedidos (
     FOREIGN KEY (id_cliente) REFERENCES clientes(id_cliente) ON DELETE CASCADE,
     FOREIGN KEY (id_producto) REFERENCES productos(id_producto) ON DELETE CASCADE
 );
+
+
+
+----------------------------------------------------------------------------------------------------
+Registras el pedido general:
+INSERT INTO pedidos (id_cliente) VALUES (1); 
+-- Supongamos que generó el id_pedido = 101
+
+
+Registras los productos dentro de ese pedido:
+-- Agregamos el Pollo
+INSERT INTO detalles_pedido (id_pedido, id_producto, cantidad, precio_unitario) 
+VALUES (101, 1, 1, 45000.00);
+
+-- Agregamos las 2 Chichas
+INSERT INTO detalles_pedido (id_pedido, id_producto, cantidad, precio_unitario) 
+VALUES (101, 3, 2, 5000.00);
+
+
+Consultas Útiles (Eliminar y Reportar)
+Para ver cuánto debe pagar un pedido total:
+
+SELECT id_pedido, SUM(cantidad * precio_unitario) AS total_factura
+FROM detalles_pedido
+WHERE id_pedido = 101;
+
+Para eliminar un producto específico de un pedido:
+
+DELETE FROM detalles_pedido WHERE id_detalle = 5;
+
+
+Para cancelar (eliminar) un pedido completo:
+
+DELETE FROM pedidos WHERE id_pedido = 101;
