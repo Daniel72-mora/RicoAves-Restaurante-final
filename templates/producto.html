@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Daniel, Karol y Maricela">
+    <link rel="stylesheet" href="{{ url_for('static', filename='producto.css') }}">
+    <title>Menú - Rico Aves</title>
+</head>
+<body>
+
+    <header>
+        <figure class="logotipo">
+            <img src="{{ url_for('static', filename='Icon2.jpeg') }}" alt="Logo Rico Aves">
+        </figure>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('inicio') }}">INICIO</a></li>
+                <li><a href="{{ url_for('productos') }}">PRODUCTOS</a></li>
+                <li><a href="{{ url_for('contacto') }}">CONTACTO</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="contenedor-menu">
+        <h1 class="titulo-principal">NUESTRO MENÚ COMPLETO</h1>
+
+        <section class="parrilla-combos">
+            <article class="tarjeta-combo">
+                <img src="{{ url_for('static', filename='pollo.png') }}" alt="Combo Pollo">
+                <header>
+                    <span class="etiqueta">COMBO 1</span>
+                    <h3>Pollo Asado o Broaster</h3>
+                </header>
+                <p>+ Papa Salada + Francesa + Patacón + Arepa + Salsas o Ají + Gaseosa 1.5L</p>
+                <footer class="precio-destacado">$34.000</footer>
+            </article>
+
+            <article class="tarjeta-combo">
+                <img src="{{ url_for('static', filename='pollo.png') }}" alt="Combo Pollo">
+                <header>
+                    <span class="etiqueta">COMBO 2</span>
+                    <h3>1 y 1/2 Pollo (Asado o Broaster)</h3>
+                </header>
+                <p>+ Papa Salada + Francesa + Patacón + Arepa + Salsas o Ají + Gaseosa 1.5L</p>
+                <footer class="precio-destacado">$45.000</footer>
+            </article>
+
+            <article class="tarjeta-combo">
+                <img src="{{ url_for('static', filename='pollo.png') }}" alt="Combo Pollo">
+                <header>
+                    <span class="etiqueta">COMBO 3</span>
+                    <h3>2 Pollos (Asados o Broaster)</h3>
+                </header>
+                <p>+ Papa Salada + Francesa + Patacón + Arepa + Salsas o Ají + Gaseosa 1.5L</p>
+                <footer class="precio-destacado">$56.000</footer>
+            </article>
+
+            <article class="tarjeta-combo combo-arroz">
+                <img src="{{ url_for('static', filename='arrozChino.png') }}" alt="Arroz Chino Personal">
+                <header>
+                    <span class="etiqueta">COMBO ARROZ CHINO</span>
+                    <h3>Arroz Chino Personal</h3>
+                </header>
+                <p>+ 1/4 de Pollo + Papa Francesa</p>
+                <footer class="precio-destacado">$17.000</footer>
+            </article>
+
+            <article class="tarjeta-combo combo-arroz">
+                <img src="{{ url_for('static', filename='arrozChino.png') }}" alt="Arroz Chino Personal">
+                <header>
+                    <span class="etiqueta">ARROZ ESPECIAL</span>
+                    <h3>Arroz Chino Especial</h3>
+                </header>
+                <p>Incluye: 1/2 Pollo + Papa Francesa + Gaseosa 1.5L</p>
+                <footer class="precio-destacado">$28.000</footer>
+            </article>
+
+            <article class="tarjeta-combo combo-arroz">
+                <img src="{{ url_for('static', filename='arrozChino.png') }}" alt="Arroz Chino Personal">
+                <header>
+                    <span class="etiqueta">ARROZ FAMILIAR</span>
+                    <h3>Arroz Chino Familiar</h3>
+                </header>
+                <p>Incluye: 1 Pollo + Papa Francesa + Gaseosa 1.5L</p>
+                <footer class="precio-destacado">$38.000</footer>
+            </article>
+        </section>
+
+        <section class="carta-detallada">
+            <aside class="columna-menu">
+                <h2>Platos a la Carta</h2>
+                <ul class="lista-items">
+                    <li><span>Carne Asada</span> <strong>$16.000</strong></li>
+                    <li><span>Lomo de Cerdo</span> <strong>$16.000</strong></li>
+                    <li><span>Arroz con Pollo</span> <strong>$16.000</strong></li>
+                    <li><span>Costillas BBQ</span> <strong>$16.000</strong></li>
+                    <li><span>Mojarra</span> <strong>$16.000</strong></li>
+                </ul>
+                <h2 class="espacio-top">Platos Especiales</h2>
+                <ul class="lista-items">
+                    <li><span>Pechuga Gratinada</span> <strong>$20.000</strong></li>
+                    <li><span>Trucha al gusto</span> <strong>$20.000</strong></li>
+                    <li><span>Punta de Anca</span> <strong>$20.000</strong></li>
+                </ul>
+            </aside>
+
+            <aside class="columna-menu">
+                <h2>Sopas</h2>
+                <ul class="lista-items">
+                    <li><span>Menudencia</span> <strong>$6.500</strong></li>
+                    <li><span>Ajiaco</span> <strong>$7.000</strong></li>
+                </ul>
+                <h2 class="espacio-top">Super Almuerzos</h2>
+                <article class="cuadro-almuerzo">
+                    <h3>Opción 1 - $10.000</h3>
+                    <p>Sopa + 1/4 de Pollo + Acompañamientos</p>
+                </article>
+                <h2 class="espacio-top">Porciones</h2>
+                <ul class="lista-items">
+                    <li><span>Papa Francesa</span> <strong>$3.500</strong></li>
+                    <li><span>Yuca</span> <strong>$3.500</strong></li>
+                </ul>
+            </aside>
+        </section>
+
+        <footer class="seccion-bebidas">
+            <h2>Bebidas</h2>
+            <ul class="lista-bebidas-ordenada">
+                <li><span>Gaseosa 1.5 L</span> <strong>$6.000</strong></li>
+                <li><span>Jugos Naturales</span> <strong>$4.000</strong></li>
+                <li><span>Cerveza</span> <strong>$3.500</strong></li>
+            </ul>
+        </footer>
+    </main>
+
+    <footer class="final">
+        <p>Microproyecto grupo de sistemas y grupo de administración - CESDE, Bogotá Colombia 2026</p>
+    </footer>
+</body>
+</html>

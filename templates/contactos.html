@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Daniel, Karol y Maricela">
+    <title>Contactos - Rico Aves</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='contactos.css') }}">
+</head>
+<body>
+
+    <header>
+        <figure class="logotipo">
+            <img src="{{ url_for('static', filename='Icon2.jpeg') }}" alt="Logo Rico Aves">
+        </figure>
+        
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('inicio') }}">INICIO</a></li>
+                <li><a href="{{ url_for('productos') }}">PRODUCTOS</a></li>
+                <li><a href="{{ url_for('contacto') }}">CONTACTO</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="contenedor-principal">
+        <section class="tarjeta">
+            <h2>CONTÁCTANOS</h2>
+            <p style="text-align: center; margin-bottom: 20px; font-size: 0.9rem;">Déjanos tu mensaje y te responderemos pronto.</p>
+            
+            <form action="{{ url_for('contacto') }}" method="POST">
+                <input type="text" name="nombre" placeholder="Escribe tu nombre completo" required>
+                <input type="tel" name="telefono" placeholder="Número de celular" required>
+                <input type="text" name="direccion" placeholder="Dirección de entrega" required>
+                <input type="email" name="email" placeholder="Correo electrónico" required>
+                <textarea name="mensaje" placeholder="¿En qué podemos ayudarte? (Opcional)"></textarea>
+                
+                <input type="submit" value="ENVIAR MENSAJE">
+            </form>
+
+            {% if enviado %}
+                <div style="background-color: #d4edda; color: #155724; padding: 10px; border-radius: 5px; margin-top: 15px; text-align: center;">
+                    <strong>¡Registro exitoso!</strong><br>
+                    Gracias {{ nombre }}, hemos guardado tu información.
+                </div>
+            {% endif %}
+        </section>
+    </main>
+
+    <footer class="final">
+        <p>Microproyecto grupo de sistemas y administración - CESDE, Bogotá 2026</p>
+    </footer>
+
+</body>
+</html>

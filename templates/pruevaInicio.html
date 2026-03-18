@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Rico Aves - Asadero y Restaurante</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='pruevaInicio.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/icon2.png') }}" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Daniel, Karol y Maricela">
+</head>
+
+<body>
+    <header>
+        <figure class="logotipo">
+            <img src="{{ url_for('static', filename='Icon2.jpeg') }}" alt="Logo Rico Aves">
+        </figure>
+        
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('inicio') }}">INICIO</a></li>
+                <li><a href="{{ url_for('productos') }}">PRODUCTOS</a></li>
+                <li><a href="{{ url_for('contacto') }}">CONTACTO</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="slider">
+            <button class="flecha prev">❮</button>
+            <figure class="contenedor-slides">
+                <a href="{{ url_for('productos') }}">
+                    <img src="{{ url_for('static', filename='Costillas BBQ.png') }}" class="slide active">
+                </a>
+                <a href="{{ url_for('productos') }}">
+                    <img src="{{ url_for('static', filename='Polllo broaster.png') }}" class="slide">
+                </a>
+                <a href="{{ url_for('productos') }}">
+                    <img src="{{ url_for('static', filename='Arroz chino.png') }}" class="slide">
+                </a>
+            </figure>
+            <button class="flecha next">❯</button>
+        </section>
+
+        <section class="main">
+            <section class="articulos">
+                <article>
+                    <h2>ASADERO Y RESTAURANTE RICO AVES</h2>
+                    <p>En <strong>Rico Aves</strong>, nos apasiona llevar a tu mesa el auténtico sabor del pollo asado y broaster. 
+                    Nuestra receta secreta garantiza que cada bocado sea jugoso, crujiente y lleno de tradición.</p>
+                    <p>¡Ven y descubre por qué somos el lugar favorito de la zona!</p>
+                </article>
+
+                <article>
+                    <h2>QUIENES SOMOS</h2>
+                    <p>Somos una empresa familiar dedicada a la preparación de alimentos típicos con el auténtico sabor tradicional.</p>
+                    <h3>Nuestra Misión</h3>
+                    <p>Brindar una experiencia gastronómica excepcional con productos frescos y servicio cálido.</p>
+                    <h3>Nuestra Visión</h3>
+                    <p>Para el año 2030, seremos el asadero líder en la región, expandiéndonos por toda la ciudad.</p>
+                </article>
+            </section>
+
+            <aside id="ubicacion">
+                <h3>BOSA PALESTINA</h3>
+                <address style="font-style: normal; margin-bottom: 15px;">
+                    <p><strong>Dirección:</strong> 68 A Sur #80N-84</p>
+                    <p><strong>Horario:</strong> 10:00 am - 11:00 pm</p>
+                </address>
+                <div class="contenedor-mapa">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3977.062483845012!2d-74.1912!3d4.6015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sco!4v1700000000000" 
+                        width="100%" height="250" style="border:0; border-radius: 8px;" allowfullscreen="" loading="lazy">
+                    </iframe>
+                </div>
+            </aside>
+        </section>
+    </main>
+
+    <footer>
+        <p>Microproyecto grupo de sistemas - CESDE, Bogotá Colombia 2026</p>
+    </footer>
+
+    <script>
+        let slides = document.querySelectorAll(".slide");
+        let index = 0;
+
+        function cambiarSlide(n) {
+            slides[index].classList.remove("active");
+            index = (index + n + slides.length) % slides.length;
+            slides[index].classList.add("active");
+        }
+
+        document.querySelector(".next").onclick = (e) => {
+            e.stopPropagation(); // Evita que el click en la flecha active el link
+            cambiarSlide(1);
+        };
+        document.querySelector(".prev").onclick = (e) => {
+            e.stopPropagation();
+            cambiarSlide(-1);
+        };
+
+        setInterval(() => cambiarSlide(1), 5000);
+    </script>
+</body>
+</html>
