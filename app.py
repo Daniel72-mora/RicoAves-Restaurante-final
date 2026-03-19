@@ -12,7 +12,7 @@ def get_db():
 # RUTA: INICIO
 @app.route('/')
 def inicio():
-    return render_template('pruevaInicio.html')
+    return render_template('index.html')
 
 # RUTA: PRODUCTOS
 @app.route('/productos')
